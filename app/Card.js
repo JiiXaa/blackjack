@@ -1,4 +1,4 @@
-export const cardValues = [
+export const CardValues = [
   '2',
   '3',
   '4',
@@ -17,7 +17,7 @@ export const cardValues = [
 export const Types = ['spades', 'hearts', 'diamonds', 'clubs'];
 
 export class Card {
-  mapTextToValue = {
+  mapTypeToValue = {
     hearts: '&hearts;',
     spades: '&spades;',
     diamonds: '&diams;',
@@ -32,7 +32,7 @@ export class Card {
   render() {
     const card = document.createElement('div');
     card.setAttribute('class', `card ${this.type}`);
-    card.innerHTML = `${this.cardValue} ${this.mapTextToValue[this.type]}`;
+    card.innerHTML = `${this.cardValue} ${this.mapTypeToValue[this.type]}`;
 
     return card;
   }
