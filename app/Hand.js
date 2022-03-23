@@ -22,6 +22,10 @@ export class Hand {
         return 10;
       }
 
+      if (this.cards.length == 1 && card.cardValue == 'A') {
+        return 11;
+      }
+
       if (this.cards.length == 2 && card.cardValue == 'A') {
         return 11;
       }
