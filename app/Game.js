@@ -41,7 +41,7 @@ class Game {
     this.playerPoints.innerHTML = this.player.calculatePoints();
     if (this.player.points > 21) {
       this.messageBox.setText('Dealer Wins!').show();
-      return;
+      this.hideButtons();
     }
   }
 
@@ -82,12 +82,16 @@ class Game {
     this.endGame();
   }
 
-  endGame() {
+  hideButtons() {
     this.hitButton.removeEventListener('click', this.hitCard);
     this.standButton.removeEventListener('click', this.dealerTurn);
 
     this.hitButton.style.display = 'none';
     this.standButton.style.display = 'none';
+  }
+
+  endGame() {
+    this.hideButtons();
 
     if (this.player.points <= 21 && this.player.points == this.dealer.points) {
       this.messageBox.setText('Draw').show();
